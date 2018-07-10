@@ -1,0 +1,39 @@
+<!--pages/pay/pay.wxml-->
+<view class='pay_address_wrap'>
+    <image class='address_icon' src='../../image/icon-dw.png'></image>
+    <view class='pay_address'>
+        <view class='pay_contact'>
+            <text>张三</text>
+            <text>13548161545</text>
+        </view>
+        <view>
+            广东省广州市天河区广东省广州市天河区
+        </view>
+    </view>
+    <image src='../../image/icon-arrow.png' class='pay_address_sel'></image>
+</view>
+
+<view class='pay_order_wrap'>
+    <view class='table_header'>
+        <view class='table_goods_name'>商品</view>
+        <view class='table_goods_num'>数量</view>
+        <view class='table_goods_con'>单价</view>
+    </view>
+    <view class="table_content_item" wx:for="{{carArray}}" wx:key="*this" wx:if="{{item.carShow}}">
+        <view class='table_goods_name'>{{item.carName}}</view>
+        <view class='table_goods_num'>{{item.carNum}}</view>
+        <view class='table_goods_con'>￥{{item.carPrice}}</view>
+    </view>
+</view>
+
+<view class='pay_remarks'>
+    <input placeholder='填写备注' type='text'></input>
+</view>
+
+
+<view class='car_bot'>
+    <view class='car_bot_wrap'>
+        总价<text class='car_total_monay'> ￥{{totalPrice}}</text>
+        <view class='car_order_confirm' bindtap='Addpay'>前往支付</view>
+    </view>
+</view>
